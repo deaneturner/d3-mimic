@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ChartControlsService } from '../chart-controls.service';
 
 @Component({
   selector: 'app-order-delivery',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderDeliveryComponent implements OnInit {
 
-  constructor() { }
+  chartData = [];
+
+  constructor(private router: Router, public chartControlsService: ChartControlsService) {
+    this.chartControlsService.fullScreen = false;
+  }
 
   ngOnInit(): void {
   }
